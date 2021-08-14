@@ -1,9 +1,10 @@
-FROM devopsedu/webapp
-
-CMD apachectl -D FOREGROUND
+FROM tomcat
 
 RUN rm var/www/html/index.html
 
 ADD php /var/www/html/
+
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
 
 
